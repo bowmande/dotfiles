@@ -2,3 +2,16 @@
 .svn
 *~
 .*.swp
+vendor/bundle
+.DS_Store
+Gemfile.d/local.rb
+.powder
+.rbenv-vars
+.powenv
+.pryrc
+git_stats
+sandi_meter
+bin/dbreset
+.agignore
+**/*/vendor/bundle
+**/*/.bundle
