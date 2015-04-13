@@ -32,6 +32,7 @@ export DOCKER_TLS_VERIFY=1
 # Use vim keybindings
 #bindkey -v
 
+unsetopt nomatch
 
 # With gruvbox we are rocking custom -italic $TERM, which don't exist in
 # terminfo remote hosts, so we need to set the remote-friendly $TERM when

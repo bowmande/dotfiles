@@ -5,6 +5,7 @@ desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   switch_to_zsh
+  setup_vim_plugins
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/plugins/rbates"
@@ -32,7 +33,6 @@ task :install do
       end
     else
       link_file(file)
-    end
   end
 end
 
@@ -89,3 +89,11 @@ def install_oh_my_zsh
     end
   end
 end
+
+def setup_vim_plugins
+  system %Q{mkdir "$HOME/.janus"}
+  system %Q{git clone https://github.com/godlygeek/csapprox.git ~/.janus/csapprox}
+  system %Q{git clone https://github.com/morhetz/gruvbox.git ~/.janus/gruvbox}
+  system %Q{git clone https://github.com/mxw/vim-jsx.git ~/.janus/vim-jsx}
+end
+
