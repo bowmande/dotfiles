@@ -1,8 +1,9 @@
 " Fuck whitespace
 autocmd FileType c,cpp,java,php,ruby,eruby,haml,sass,scss,python,html,css,javascript,cucumber,slim,coffee autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))"
-map <Leader>t :CtrlP<CR>
+map <Leader>t :call PickFile()<CR>
+"map <Leader>t :CtrlP<CR>
 
-map <leader>r :!ruby %<cr>
+"map <leader>r :!ruby %<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 let g:vroom_use_binstubs = 1
@@ -10,6 +11,8 @@ let g:vroom_use_binstubs = 1
 let g:jsx_ext_required = 0
 
 color gruvbox
+
+set bg=dark
 
 highlight Comment cterm=italic
 

@@ -1,13 +1,16 @@
 require 'rake'
 require 'erb'
 
+# Notes: Install these vim plugins in ~/.janus
+# csapprox gruvbox pick tabular vim-airline vim-elixir vim-jsx
+
 desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   switch_to_zsh
   setup_vim_plugins
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
+  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh installed apps]
   files << "oh-my-zsh/custom/plugins/rbates"
   files << "oh-my-zsh/custom/rbates.zsh-theme"
   files.each do |file|
